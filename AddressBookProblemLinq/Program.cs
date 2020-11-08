@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace AddressBookProblemLinq
 {
@@ -6,7 +7,9 @@ namespace AddressBookProblemLinq
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to address book problem for linq");
+            //Creating DataTable for addressbook problem UC1
+            DataTable addressBookTable = new DataTable();
         }
     }
 }
