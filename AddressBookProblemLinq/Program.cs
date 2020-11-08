@@ -60,6 +60,14 @@ namespace AddressBookProblemLinq
             PrimaryKeyColumns[0] = addressBookTable.Columns["firstName"];
             PrimaryKeyColumns[1] = addressBookTable.Columns["phoneNumber"];
             addressBookTable.PrimaryKey = PrimaryKeyColumns;
+
+            //Inserting data into columns into datatable UC3
+            addressBookTable.Rows.Add("Vishal", "Garg", "Barwala", "Hisar", "Haryana", 125121, 8570934858, "vishal.garg");
+            addressBookTable.Rows.Add("Akshay", "Poriya", "Goregaon", "Bangalore", "Karnataka", 125433, 8585858585, "akshay.a");
+            addressBookTable.Rows.Add("Kretika", "Arora", "Andheri", "Mumbai", "Maharashtra", 125445, 7575757575, "kretika.arora");
+            addressBookTable.Rows.Add("Kamalakar", "Singh", "Thanesar", "Kurukshetra", "Haryana", 136119, 9595959595, "kamalakar.singh");
+            addressBookTable.Rows.Add("Praveen", "Kumar", "rohini", "Delhi", "Delhi", 435121, 7897897898, "praveen.kumar");
+            addressBookTable.Rows.Add("Apoorva", "Singh", "Andheri", "Mumbai", "Maharashtra", 125445, 8598598599, "apporva.singh");
         }
     }
 }
