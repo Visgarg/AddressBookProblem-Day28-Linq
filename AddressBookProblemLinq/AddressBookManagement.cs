@@ -57,5 +57,30 @@ namespace AddressBookProblemLinq
             }
 
         }
+        /// <summary>
+        /// Getting the count after grouping by city and state UC6
+        /// </summary>
+        /// <param name="datatable">The datatable.</param>
+        public void GetCountByCityAndState(DataTable datatable)
+        {
+            //getting count for particular state or city
+            var recordData = datatable.AsEnumerable().Where(r => r.Field<string>("city") == "Mumbai" && r.Field<string>("state") == "Maharashtra").Count();
+            //grouping data by city and state
+            var recordedData = from data in datatable.AsEnumerable()
+                               group data by new { city = data.Field<string>("city"), state = data.Field<string>("state") } into g
+                               select new { city = g.Key, count = g.Count() };
+            //displaying data for particular city or state
+            Console.WriteLine(recordData);
+            //displaying total grouped data
+            foreach (var data in recordedData.AsEnumerable())
+            {
+                Console.WriteLine("city:- " + data.city.city);
+                Console.WriteLine("state:- " + data.city.state);
+                Console.WriteLine("lastName:- " + data.count);
+                Console.WriteLine("*******************");
+
+            }
+
+        }
     }
 }

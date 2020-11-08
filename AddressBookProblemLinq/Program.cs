@@ -80,9 +80,9 @@ namespace AddressBookProblemLinq
             //    Console.WriteLine(element);
             //}
             //UC6
-            addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
+            //addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
             //UC7
-            //addressBookManagement.GetCountByCityAndState(addressBookTable);
+            addressBookManagement.GetCountByCityAndState(addressBookTable);
 
         }
     }
