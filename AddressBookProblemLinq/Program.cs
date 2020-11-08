@@ -68,6 +68,21 @@ namespace AddressBookProblemLinq
             addressBookTable.Rows.Add("Kamalakar", "Singh", "Thanesar", "Kurukshetra", "Haryana", 136119, 9595959595, "kamalakar.singh");
             addressBookTable.Rows.Add("Praveen", "Kumar", "rohini", "Delhi", "Delhi", 435121, 7897897898, "praveen.kumar");
             addressBookTable.Rows.Add("Apoorva", "Singh", "Andheri", "Mumbai", "Maharashtra", 125445, 8598598599, "apporva.singh");
+            //Console.WriteLine(addressBookTable.Rows);
+            //var book = addressBookTable.AsEnumerable().Select(r => r.Field<string>("firstName"));
+            //foreach (string element in book)
+            //{
+            //    Console.WriteLine(element);
+            //}
+            AddressBookManagement addressBookManagement = new AddressBookManagement();
+            //deleting contacts from address book table UC5
+            addressBookTable= addressBookManagement.DeletingContactFromTable(addressBookTable);
+            //checking if contact is deleted 
+            //UC6
+            //addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
+            //UC7
+            //addressBookManagement.GetCountByCityAndState(addressBookTable);
+
         }
     }
 }
