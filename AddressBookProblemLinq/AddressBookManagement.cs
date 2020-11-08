@@ -8,6 +8,23 @@ namespace AddressBookProblemLinq
 {
     class AddressBookManagement
     {
+        public DataTable UpdatedContactDetails(DataTable dataTable)
+        {
+            var recordData = dataTable.AsEnumerable().Where(a => a.Field<string>("FirstName").Equals("Akshay")).FirstOrDefault();
+            recordData["state"] = "Mahar.";
+            Console.WriteLine("***********UpdatedData***************");
+            Console.WriteLine("FirstName:- " +recordData.Field<string>("firstName"));
+            Console.WriteLine("lastName:- " + recordData.Field<string>("lastName"));
+            Console.WriteLine("Address:- " + recordData.Field<string>("address"));
+            Console.WriteLine("City:- " + recordData.Field<string>("city"));
+            Console.WriteLine("State:- " + recordData.Field<string>("state"));
+            Console.WriteLine("zip:- " + Convert.ToInt32(recordData.Field<int>("zip")));
+            Console.WriteLine("phoneNumber:- " + Convert.ToDouble(recordData.Field<Double>("phoneNumber")));
+            Console.WriteLine("eMail:- " + recordData.Field<string>("eMail"));
+            Console.WriteLine("***************");
+
+            return dataTable;
+        }
         /// <summary>
         /// Deletings the contact from table. UC5
         /// </summary>
