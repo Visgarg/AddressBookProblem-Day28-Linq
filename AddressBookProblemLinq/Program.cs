@@ -82,7 +82,9 @@ namespace AddressBookProblemLinq
             //UC6
             //addressBookManagement.RetrievingContactDetailsByStateOrCity(addressBookTable);
             //UC7
-            addressBookManagement.GetCountByCityAndState(addressBookTable);
+            //addressBookManagement.GetCountByCityAndState(addressBookTable);
+            //UC8
+            addressBookManagement.GetSortedDataBasedOnPersonName(addressBookTable);
 
         }
     }
