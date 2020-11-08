@@ -88,6 +88,7 @@ namespace AddressBookProblemLinq
         /// <param name="datatable">The datatable.</param>
         public void GetSortedDataBasedOnPersonName(DataTable datatable)
         {
+            //linq query on lambda syntax
             var recordData = datatable.AsEnumerable().Where(r => r.Field<string>("city") == "Mumbai").OrderBy(r => r.Field<string>("firstName")).ThenBy(r => r.Field<string>("lastName"));
             foreach (var data in recordData)
             {
@@ -102,5 +103,6 @@ namespace AddressBookProblemLinq
                 Console.WriteLine("***************");
             }
         }
+
     }
 }
