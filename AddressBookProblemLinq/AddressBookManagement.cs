@@ -9,7 +9,7 @@ namespace AddressBookProblemLinq
     class AddressBookManagement
     {
         /// <summary>
-        /// Deletings the contact from table. UC4
+        /// Deletings the contact from table. UC5
         /// </summary>
         /// <param name="datatable">The datatable.</param>
         /// <returns></returns>
@@ -32,6 +32,30 @@ namespace AddressBookProblemLinq
                 Console.WriteLine("***************");
             }
             return dataTableupdated;
+        }
+        /// <summary>
+        /// Retrievings the contact details by state or city. UC6
+        /// </summary>
+        /// <param name="dataTable">The data table.</param>
+        public void RetrievingContactDetailsByStateOrCity(DataTable dataTable)
+        {
+            //lambda syntax for getting data for particular city
+            var recordData = dataTable.AsEnumerable().Where(r => r.Field<string>("city") == "Mumbai");
+            //lambda syntax for getting data for particular state
+            var recordDataState = dataTable.AsEnumerable().Where(r => r.Field<string>("state") == "Maharashtra");
+            foreach (var data in recordDataState)
+            {
+                Console.WriteLine("FirstName:- " + data.Field<string>("firstName"));
+                Console.WriteLine("lastName:- " + data.Field<string>("lastName"));
+                Console.WriteLine("Address:- " + data.Field<string>("address"));
+                Console.WriteLine("City:- " + data.Field<string>("city"));
+                Console.WriteLine("State:- " + data.Field<string>("state"));
+                Console.WriteLine("zip:- " + Convert.ToInt32(data.Field<int>("zip")));
+                Console.WriteLine("phoneNumber:- " + Convert.ToDouble(data.Field<Double>("phoneNumber")));
+                Console.WriteLine("eMail:- " + data.Field<string>("eMail"));
+                Console.WriteLine("***************");
+            }
+
         }
     }
 }
